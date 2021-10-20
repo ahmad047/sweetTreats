@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 
@@ -27,5 +28,23 @@ public class Courier {
     private boolean available = false;
     private boolean preferredCourierStatus;
 
-
+    public Courier(
+            String name,
+            LocalTime shiftStartTime,
+            LocalTime shiftEndTime,
+            int deliveryRange,
+            boolean refrigeratedBoxAvailable,
+            BigDecimal chargePerMile,
+            boolean available,
+            boolean preferredCourierStatus)
+    {
+        this.name = name;
+        this.shiftStartTime = shiftStartTime;
+        this.shiftEndTime = shiftEndTime;
+        this.deliveryRange = deliveryRange;
+        this.refrigeratedBoxAvailable = refrigeratedBoxAvailable;
+        this.chargePerMile = chargePerMile;
+        this.available = available;
+        this.preferredCourierStatus = preferredCourierStatus;
+    }
 }

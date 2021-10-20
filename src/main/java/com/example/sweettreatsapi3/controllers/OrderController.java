@@ -16,7 +16,11 @@ public class OrderController {
     OrderRepository orderRepository;
 
     @GetMapping
-    List<Order> all () {
-        return orderRepository.findAll();
+//    List<Order> all () {
+//        return orderRepository.findAll();
+//    }
+//    TODO - need to implement it so that it returns all orders
+    String all() {
+        return "need to implement";
     }
 }

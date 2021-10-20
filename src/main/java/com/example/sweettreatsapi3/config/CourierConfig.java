@@ -19,7 +19,6 @@ public class CourierConfig {
     public CommandLineRunner initialiseDatabase(CourierRepository repository){
         return args -> {
             Courier bobby = new Courier(
-                    1,
                     "bobby",
                     LocalTime.of(9, 0),
                     LocalTime.of(13, 0),
@@ -31,7 +30,6 @@ public class CourierConfig {
             );
 
             Courier martin = new Courier(
-                    2,
                     "martin",
                     LocalTime.of(9, 0),
                     LocalTime.of(17, 0),
@@ -43,7 +41,6 @@ public class CourierConfig {
             );
 
             Courier geoff = new Courier(
-                    3,
                     "geoff",
                     LocalTime.of(10, 0),
                     LocalTime.of(16, 0),
