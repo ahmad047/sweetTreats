@@ -34,6 +34,8 @@ public class CourierController {
         return courierRepository.save(newCourier);
     }
 
+    //    TODO
+//    @PutMapping("/{id}")
 
     @DeleteMapping("/{id}")
     void deleteCourier(@PathVariable Long id) {
