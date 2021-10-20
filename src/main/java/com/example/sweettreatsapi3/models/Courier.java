@@ -19,7 +19,7 @@ import java.time.LocalTime;
 public class Courier {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String name;
     @JsonFormat(pattern="HH:mm:ss")
     private LocalTime shiftStartTime;

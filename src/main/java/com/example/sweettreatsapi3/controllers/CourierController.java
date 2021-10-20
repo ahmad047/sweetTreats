@@ -34,4 +34,11 @@ public class CourierController {
     Courier newCourier(@RequestBody Courier newCourier){
         return courierRepository.save(newCourier);
     }
+
+
+    @DeleteMapping("/{id}")
+    void deleteCourier(@PathVariable Long id) {
+        courierRepository.deleteById(id);
+    }
+
 }
