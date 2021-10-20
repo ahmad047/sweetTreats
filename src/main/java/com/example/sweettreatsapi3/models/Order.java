@@ -1,5 +1,6 @@
 package com.example.sweettreatsapi3.models;
 
+import com.example.sweettreatsapi3.util.TipCalculator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,6 +36,6 @@ public class Order {
         this.time = time;
         this.distance = distance;
         this.isRefrigerationRequired = isRefrigerationRequired;
-        this.suggestedTip = suggestedTip;
+        this.suggestedTip = TipCalculator.calculate(MINIMUM_TIP, MAXIMUM_TIP, this.distance, tipPerMile);
     }
 }
