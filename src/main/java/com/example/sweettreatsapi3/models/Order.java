@@ -35,6 +35,6 @@ public class Order {
         this.time = time;
         this.distance = distance;
         this.isRefrigerationRequired = isRefrigerationRequired;
-        suggestedTip = TipCalculator.calculate(distance);
+        this.suggestedTip = TipCalculator.calculate(distance);
     }
 }
