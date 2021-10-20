@@ -1,6 +1,7 @@
 package com.example.sweettreatsapi3.models;
 
 import com.example.sweettreatsapi3.util.TipCalculator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,19 +24,17 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    @JsonFormat(pattern="HH:mm:ss")
     private LocalTime time;
     private Integer distance;
     private boolean isRefrigerationRequired;
-    private static final BigDecimal MINIMUM_TIP = BigDecimal.valueOf(1);
-    private static final BigDecimal MAXIMUM_TIP = BigDecimal.valueOf(3);
-    private static final BigDecimal tipPerMile = BigDecimal.valueOf(.75);
     private BigDecimal suggestedTip;
 
-    public Order(String name, LocalTime time, Integer distance, boolean isRefrigerationRequired, BigDecimal suggestedTip) {
+    public Order(String name, LocalTime time, Integer distance, boolean isRefrigerationRequired) {
         this.name = name;
         this.time = time;
         this.distance = distance;
         this.isRefrigerationRequired = isRefrigerationRequired;
-        this.suggestedTip = TipCalculator.calculate(MINIMUM_TIP, MAXIMUM_TIP, this.distance, tipPerMile);
+        suggestedTip = TipCalculator.calculate(distance);
     }
 }
