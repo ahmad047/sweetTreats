@@ -1,15 +1,24 @@
 package com.example.sweettreatsapi3.config;
 
 import com.example.sweettreatsapi3.models.Courier;
+import com.example.sweettreatsapi3.models.Order;
 import com.example.sweettreatsapi3.repository.CourierRepository;
+import com.example.sweettreatsapi3.repository.OrderRepository;
+import org.aspectj.weaver.ast.Or;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.math.BigDecimal;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.Optional;
 
 @Configuration
 public class Config {
@@ -56,4 +65,20 @@ public class Config {
             log.info("Preloading " + repository.save(geoff));
         };
     }
+
+//    @Bean
+//    public CommandLineRunner initialiseOrders(OrderRepository orderRepository){
+//        return args -> {
+//            Order order = new Order(
+//                    "dummy",
+//                    LocalTime.of(11, 30),
+//                    5,
+//                    false
+//            );
+//
+//            log.info("Preloading " + orderRepository.save(order));
+//        };
+//    }
+
+
 }
