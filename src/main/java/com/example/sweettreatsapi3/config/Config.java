@@ -12,11 +12,11 @@ import java.math.BigDecimal;
 import java.time.LocalTime;
 
 @Configuration
-public class CourierConfig {
-    public static final Logger log = LoggerFactory.getLogger(CourierConfig.class);
+public class Config {
+    public static final Logger log = LoggerFactory.getLogger(Config.class);
 
     @Bean
-    public CommandLineRunner initialiseDatabase(CourierRepository repository){
+    public CommandLineRunner initialiseCouriers(CourierRepository repository){
         return args -> {
             Courier bobby = new Courier(
                     "bobby",
