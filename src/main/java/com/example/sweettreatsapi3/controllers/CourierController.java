@@ -5,10 +5,7 @@ import com.example.sweettreatsapi3.exception.CourierNotFoundException;
 import com.example.sweettreatsapi3.models.Courier;
 import com.example.sweettreatsapi3.repository.CourierRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,15 +18,20 @@ public class CourierController {
 
 
     @GetMapping
-    List<Courier> all() {
+    List<Courier> findAllCouriers() {
         return courierRepository.findAll();
     }
 
     // TODO - this is currently not returning a courier
     @GetMapping("/{id}")
-    Courier one(@PathVariable Long id) {
+    Courier findOneCourier(@PathVariable Long id) {
 
         return courierRepository.findById(id) //
                 .orElseThrow(() -> new CourierNotFoundException(id));
+    }
+
+    @PostMapping
+    Courier newCourier(@RequestBody Courier newCourier){
+        return courierRepository.save(newCourier);
     }
 }

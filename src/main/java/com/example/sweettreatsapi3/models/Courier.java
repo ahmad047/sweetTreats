@@ -1,5 +1,6 @@
 package com.example.sweettreatsapi3.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,9 @@ public class Courier {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    @JsonFormat(pattern="HH:mm:ss")
     private LocalTime shiftStartTime;
+    @JsonFormat(pattern="HH:mm:ss")
     private LocalTime shiftEndTime;
     private int deliveryRange;
     private boolean refrigeratedBoxAvailable;
@@ -36,7 +39,8 @@ public class Courier {
             boolean refrigeratedBoxAvailable,
             BigDecimal chargePerMile,
             boolean available,
-            boolean preferredCourierStatus)
+            boolean preferredCourierStatus
+    )
     {
         this.name = name;
         this.shiftStartTime = shiftStartTime;
