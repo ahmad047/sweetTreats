@@ -16,7 +16,7 @@ import java.time.LocalTime;
 @Data
 @ToString
 @Entity
-public class Order2 {
+public class OrderNew {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -26,7 +26,7 @@ public class Order2 {
     private Integer distance;
     private boolean isRefrigerationRequired;
 
-    public Order2(String name, LocalTime time, Integer distance, boolean isRefrigerationRequired) {
+    public OrderNew(String name, LocalTime time, Integer distance, boolean isRefrigerationRequired) {
         this.name = name;
         this.time = time;
         this.distance = distance;
