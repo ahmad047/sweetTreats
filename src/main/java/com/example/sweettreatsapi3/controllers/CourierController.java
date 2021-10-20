@@ -22,7 +22,6 @@ public class CourierController {
         return courierRepository.findAll();
     }
 
-    // TODO - this is currently not returning a courier
     @GetMapping("/{id}")
     Courier findOneCourier(@PathVariable Long id) {
 
@@ -31,7 +30,7 @@ public class CourierController {
     }
 
     @PostMapping
-    Courier newCourier(@RequestBody Courier newCourier){
+    Courier newCourier(@RequestBody Courier newCourier) {
         return courierRepository.save(newCourier);
     }
 
