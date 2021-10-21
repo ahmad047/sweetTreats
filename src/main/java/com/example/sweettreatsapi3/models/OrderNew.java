@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ import java.util.logging.Level;
 @NoArgsConstructor
 @Data
 @ToString
-@Entity
+@Document("order")
 public class OrderNew {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

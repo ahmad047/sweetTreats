@@ -1,6 +1,5 @@
 package com.example.sweettreatsapi3.controllers;
 
-import com.example.sweettreatsapi3.models.Courier;
 import com.example.sweettreatsapi3.models.OrderNew;
 import com.example.sweettreatsapi3.repository.OrderNewRepository;
 import lombok.AllArgsConstructor;
@@ -38,7 +37,7 @@ public class OrderNewController {
 //    TODO
     @GetMapping("/{id}/courier")
     String findBestCourier(@PathVariable Long id) {
-        OrderNew order = orderNewRepository.getById(id);
+        Optional<OrderNew> order = orderNewRepository.findById(id);
 
         return "the best courier is";
     }

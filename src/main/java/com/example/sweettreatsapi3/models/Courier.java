@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,12 +16,12 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @Data
 @ToString
-@Entity
+@Document("courier")
 public class Courier {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     // TODO make it a final field, @allargs will then ignore this
-    private Long id;
+    private String id;
     private String name;
     @JsonFormat(pattern="HH:mm:ss")
     private LocalTime shiftStartTime;

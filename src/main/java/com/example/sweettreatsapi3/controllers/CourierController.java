@@ -24,7 +24,7 @@ public class CourierController {
     }
 
     @GetMapping("/{id}")
-    Courier findOneCourier(@PathVariable Long id) {
+    Courier findOneCourier(@PathVariable String id) {
 
         return courierRepository.findById(id) //
                 .orElseThrow(() -> new CourierNotFoundException(id));
@@ -39,7 +39,7 @@ public class CourierController {
 //    @PutMapping("/{id}")
 
     @DeleteMapping("/{id}")
-    void deleteCourier(@PathVariable Long id) {
+    void deleteCourier(@PathVariable String id) {
         courierRepository.deleteById(id);
     }
 
