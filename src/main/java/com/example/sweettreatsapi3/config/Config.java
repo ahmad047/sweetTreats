@@ -15,47 +15,47 @@ import java.time.LocalTime;
 public class Config {
     public static final Logger log = LoggerFactory.getLogger(Config.class);
 
-//    @Bean
-//    public CommandLineRunner initialiseCouriers(CourierRepository repository){
-//        return args -> {
-//            Courier bobby = new Courier(
-//                    "bobby",
-//                    LocalTime.of(9, 0),
-//                    LocalTime.of(13, 0),
-//                    5,
-//                    false,
-//                    BigDecimal.valueOf(1.75),
-//                    false,
-//                    false
-//            );
-//
-//            Courier martin = new Courier(
-//                    "martin",
-//                    LocalTime.of(9, 0),
-//                    LocalTime.of(17, 0),
-//                    3,
-//                    true,
-//                    BigDecimal.valueOf(1.50),
-//                    false,
-//                    false
-//            );
-//
-//            Courier geoff = new Courier(
-//                    "geoff",
-//                    LocalTime.of(10, 0),
-//                    LocalTime.of(16, 0),
-//                    4,
-//                    false,
-//                    BigDecimal.valueOf(2.00),
-//                    false,
-//                    true
-//            );
-//
-//            log.info("Preloading " + repository.save(bobby));
-//            log.info("Preloading " + repository.save(martin));
-//            log.info("Preloading " + repository.save(geoff));
-//        };
-//    }
+    @Bean
+    public CommandLineRunner initialiseCouriers(CourierRepository repository){
+        return args -> {
+            Courier bobby = new Courier(
+                    "bobby",
+                    LocalTime.of(9, 0),
+                    LocalTime.of(13, 0),
+                    5,
+                    false,
+                    BigDecimal.valueOf(1.75),
+                    false,
+                    false
+            );
+
+            Courier martin = new Courier(
+                    "martin",
+                    LocalTime.of(9, 0),
+                    LocalTime.of(17, 0),
+                    3,
+                    true,
+                    BigDecimal.valueOf(1.50),
+                    false,
+                    false
+            );
+
+            Courier geoff = new Courier(
+                    "geoff",
+                    LocalTime.of(10, 0),
+                    LocalTime.of(16, 0),
+                    4,
+                    false,
+                    BigDecimal.valueOf(2.00),
+                    false,
+                    true
+            );
+
+            log.info("Preloading " + repository.save(bobby));
+            log.info("Preloading " + repository.save(martin));
+            log.info("Preloading " + repository.save(geoff));
+        };
+    }
 
 //    @Bean
 //    public CommandLineRunner initialiseOrders(OrderRepository orderRepository){
