@@ -3,6 +3,7 @@ package com.example.sweettreatsapi3.controllers;
 import com.example.sweettreatsapi3.exception.CourierNotFoundAdvice;
 import com.example.sweettreatsapi3.exception.CourierNotFoundException;
 import com.example.sweettreatsapi3.models.Courier;
+import com.example.sweettreatsapi3.models.OrderNew;
 import com.example.sweettreatsapi3.repository.CourierRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -41,5 +42,6 @@ public class CourierController {
     void deleteCourier(@PathVariable Long id) {
         courierRepository.deleteById(id);
     }
+
 
 }

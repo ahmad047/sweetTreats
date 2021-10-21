@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.logging.Level;
 
 @NoArgsConstructor
 @Data

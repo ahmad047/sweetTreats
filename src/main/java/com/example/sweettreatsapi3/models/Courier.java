@@ -19,6 +19,7 @@ import java.time.LocalTime;
 public class Courier {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    // TODO make it a final field, @allargs will then ignore this
     private Long id;
     private String name;
     @JsonFormat(pattern="HH:mm:ss")

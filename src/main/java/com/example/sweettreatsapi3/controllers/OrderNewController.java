@@ -1,12 +1,13 @@
 package com.example.sweettreatsapi3.controllers;
 
+import com.example.sweettreatsapi3.models.Courier;
 import com.example.sweettreatsapi3.models.OrderNew;
 import com.example.sweettreatsapi3.repository.OrderNewRepository;
 import lombok.AllArgsConstructor;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -32,6 +33,14 @@ public class OrderNewController {
     @DeleteMapping("/{id}")
     void deleteOrder(@PathVariable Long id) {
         orderNewRepository.deleteById(id);
+    }
+
+//    TODO
+    @GetMapping("/{id}/courier")
+    String findBestCourier(@PathVariable Long id) {
+        OrderNew order = orderNewRepository.getById(id);
+
+        return "the best courier is";
     }
 
 }
