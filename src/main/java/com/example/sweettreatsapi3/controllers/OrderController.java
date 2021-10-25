@@ -24,19 +24,18 @@ public class OrderController {
         return orderNewRepository.save(dummy);
     }
 
-//    TODO
-//    @PutMapping("/{id}")
-
-
 
     @DeleteMapping("/{id}")
-    void deleteOrder(@PathVariable Long id) {
+    void deleteCourier(@PathVariable String id) {
         orderNewRepository.deleteById(id);
     }
 
 //    TODO
+//    @PutMapping("/{id}")
+
+//    TODO
     @GetMapping("/{id}/courier")
-    String findBestCourier(@PathVariable Long id) {
+    String findBestCourier(@PathVariable String id) {
         Optional<Order> order = orderNewRepository.findById(id);
 
         return "the best courier is";
