@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.time.LocalTime;
 
 @Configuration
+@EnableEncryptableProperties
 public class Config {
     public static final Logger log = LoggerFactory.getLogger(Config.class);
 

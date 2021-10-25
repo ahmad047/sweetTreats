@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableMongoRepositories
+@EnableEncryptableProperties
 public class SweetTreatsApi3Application {
 
     public static void main(String[] args) {
