@@ -19,17 +19,17 @@ import java.util.logging.Level;
 @Data
 @ToString
 @Document("order")
-public class OrderNew {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
     private String name;
     @JsonFormat(pattern="HH:mm:ss")
     private LocalTime time;
     private Integer distance;
     private boolean isRefrigerationRequired;
 
-    public OrderNew(String name, LocalTime time, Integer distance, boolean isRefrigerationRequired) {
+    public Order(String name, LocalTime time, Integer distance, boolean isRefrigerationRequired) {
         this.name = name;
         this.time = time;
         this.distance = distance;

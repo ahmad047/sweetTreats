@@ -1,15 +1,12 @@
 package com.example.sweettreatsapi3.controllers;
 
-import com.example.sweettreatsapi3.exception.CourierNotFoundAdvice;
 import com.example.sweettreatsapi3.exception.CourierNotFoundException;
 import com.example.sweettreatsapi3.models.Courier;
-import com.example.sweettreatsapi3.models.OrderNew;
 import com.example.sweettreatsapi3.repository.CourierRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RestController

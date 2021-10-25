@@ -1,7 +1,7 @@
 package com.example.sweettreatsapi3.controllers;
 
-import com.example.sweettreatsapi3.models.OrderNew;
-import com.example.sweettreatsapi3.repository.OrderNewRepository;
+import com.example.sweettreatsapi3.models.Order;
+import com.example.sweettreatsapi3.repository.OrderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,16 +11,16 @@ import java.util.Optional;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/orders")
-public class OrderNewController {
-    OrderNewRepository orderNewRepository;
+public class OrderController {
+    OrderRepository orderNewRepository;
 
     @GetMapping
-    List<OrderNew> all (){
+    List<Order> all (){
         return orderNewRepository.findAll();
     }
 
     @PostMapping
-    OrderNew create(@RequestBody OrderNew dummy){
+    Order create(@RequestBody Order dummy){
         return orderNewRepository.save(dummy);
     }
 
@@ -37,7 +37,7 @@ public class OrderNewController {
 //    TODO
     @GetMapping("/{id}/courier")
     String findBestCourier(@PathVariable Long id) {
-        Optional<OrderNew> order = orderNewRepository.findById(id);
+        Optional<Order> order = orderNewRepository.findById(id);
 
         return "the best courier is";
     }
