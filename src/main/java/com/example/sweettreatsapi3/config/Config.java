@@ -2,6 +2,9 @@ package com.example.sweettreatsapi3.config;
 
 import com.example.sweettreatsapi3.models.Courier;
 import com.example.sweettreatsapi3.repository.CourierRepository;
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
+import com.ulisesbocchio.jasyptspringboot.annotation.EncryptablePropertySource;
+import com.ulisesbocchio.jasyptspringboot.annotation.EncryptablePropertySources;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
