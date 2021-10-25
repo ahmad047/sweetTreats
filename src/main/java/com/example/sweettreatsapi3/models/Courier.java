@@ -27,7 +27,7 @@ public class Courier {
     private LocalTime shiftStartTime;
     @JsonFormat(pattern="HH:mm:ss")
     private LocalTime shiftEndTime;
-    private int deliveryRange;
+    private double deliveryRange;
     private boolean refrigeratedBoxAvailable;
     private BigDecimal chargePerMile;
     private boolean available = false;
